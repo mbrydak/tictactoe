@@ -3,23 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Tic Tac Toe</title>
   </head>
   <body>
-    <div class="title">
-      <h1 class="title">Tic Tac Toe!</h1>
+    <div class="game-board" id="game-board">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
     </div>
-    <div class="wrapper">
-      <div class="one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ratione magni ullam molestias natus. Corporis?</div>
-      <div class="two">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam vitae beatae, reprehenderit magni possimus natus?</div>
-      <div class="three">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sit esse officiis earum incidunt. Perferendis?</div>
-      <div class="four">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius assumenda facilis asperiores, aperiam quia ipsam.</div>
-      <div class="five">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae voluptas necessitatibus assumenda dicta modi autem!</div>
-      <div class="six">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ducimus tempora debitis, at cum iste?</div>
-      <div class="seven">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit corrupti culpa necessitatibus? Inventore, quae ipsum?</div>
-      <div class="eight">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus rerum veniam dolor unde nemo neque!</div>
-      <div class="nine">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim ad distinctio voluptatibus, voluptas iure alias?</div>
+    <div class="message-win">
+      <div data-message-win-text></div>
+      <button id="restartbutton">Restart</button>
     </div>
+    <script src="./javascript/tictactoe.js"></script>
   </body>
 </html>
