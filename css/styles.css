@@ -32,6 +32,12 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  cursor: pointer;
+}
+
+cell.x,
+cell.circle {
+  cursor: not-allowed;
 }
 
 .cell:first-child,
@@ -51,40 +57,93 @@ body {
 .cell:nth-child(7) {
   border-bottom: none;
 }
+.cell.x::before,
+.cell.circle::before,
+.cell.x::after {
+  background-color: black;
+}
+
+.game-board.x .cell:not(.x):not(.circle):hover::before,
+.game-board.x .cell:not(.x):not(.circle):hover::after,
+.game-board.x .cell:not(.x):not(.circle):hover::before,
+.game-board.x .cell:not(.x):not(.circle):hover::after {
+  background-color: lightgray;
+}
 
 .cell.x::before,
-.cell.x::after {
+.cell.x::after,
+.game-board.x .cell:not(.x):not(.circle):hover::before,
+.game-board.x .cell:not(.x):not(.circle):hover::after {
   content: '';
   position: absolute;
   width: calc(var(--mark-size) * 0.15);
   height: var(--mark-size);
-  background-color: black;
 }
 
-.cell.cell.x::before {
+.cell.cell.x::before,
+.game-board.x .cell:not(.x):not(.circle):hover::before {
   transform: rotate(45deg);
 }
 
-.cell.x::after {
+.cell.x::after,
+.game-board.x .cell:not(.x):not(.circle):hover::after {
   transform: rotate(-45deg);
 }
 
 .cell.circle::before,
-.cell.circle::after {
+.cell.circle::after,
+.game-board.circle .cell:not(.x):not(.circle):hover::before,
+.game-board.circle .cell:not(.x):not(.circle):hover::after {
   content: '';
   position: absolute;
   border-radius: 50%;
   background-color: black;
 }
 
-.cell.circle::before {
+.cell.circle::before,
+.game-board.circle .cell:not(.x):not(.circle):hover::before {
   width: var(--mark-size);
   height: var(--mark-size);
   background-color: black;
 }
 
-.cell.circle::after {
+.cell.circle::after,
+.game-board.circle .cell:not(.x):not(.circle):hover::after {
   width: calc(var(--mark-size) * 0.75);
   height: calc(var(--mark-size) * 0.75);
   background-color: white;
+}
+
+.message-win {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(000, 000, 000, 0.9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.message-win button {
+  font-size: 2rem;
+  background-color: white;
+  border: 1px solid black;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+
+.message-win button:hover {
+  background-color: black;
+  border-color: white;
+  color: white;
+}
+
+.message-win.show {
+  display: flex;
 }
