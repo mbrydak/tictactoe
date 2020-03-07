@@ -38,7 +38,7 @@ function checkWin(currentClass) {
     });
   });
 }
-function hadnleClick(e) {
+function handleClick(e) {
   const cell = e.target;
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
   placeMark(cell, currentClass);
@@ -52,7 +52,7 @@ function hadnleClick(e) {
 function startGame() {
   circleTurn = false;
   cellElements.forEach(cell => {
-    cell.addEventListener('click', hadnleClick, { once: true });
+    cell.addEventListener('click', handleClick, { once: true });
   });
   setBoardHover();
 }
