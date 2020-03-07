@@ -34,7 +34,7 @@ function setBoardHover() {
 function checkWin(currentClass) {
   return WIN_COMBO.some(combination => {
     return combination.every(index => {
-      return cellElements[index].classList(currentClass);
+      return cellElements[index].classList.contains(currentClass);
     });
   });
 }
@@ -42,7 +42,7 @@ function handleClick(e) {
   const cell = e.target;
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
   placeMark(cell, currentClass);
-  if (checkWin()) {
+  if (checkWin(currentClass)) {
     console.log('winner');
   }
   changeTurn();
