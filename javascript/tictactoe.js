@@ -43,7 +43,7 @@ function handleClick(e) {
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
   placeMark(cell, currentClass);
   if (checkWin(currentClass)) {
-    console.log('winner');
+    console.log('Winner!');
   }
   changeTurn();
   setBoardHover();
